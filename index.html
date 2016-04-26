@@ -1,0 +1,113 @@
+<!doctype html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <title>Todos $http</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body ng-controller="TodoCtrl">
+  <section>
+    <!-- Begin Image -->
+
+    <img class="portrait" ng-repeat="todo in todos" src={{todo.image}} />
+    <!-- End Image -->
+    <!-- Begin Personal Information -->
+    <div class="self">
+      <h1 ng-repeat="todo in todos"> {{todo.name}} </h1>
+      <p ng-repeat="todo in todos">{{todo.headline}}</p>
+      <table style="width:100%">
+        <tr ng-repeat="todo in todos">
+          <td>Country</td>
+          <td>{{todo.country}}</td>
+        </tr>
+        <tr ng-repeat="todo in todos">
+          <td>Job</td>
+          <td>{{todo.job}}</td>
+        </tr>
+        <tr ng-repeat="todo in todos">
+          <td>Email</td>
+          <td>{{todo.information}}</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section ng-repeat="todo in todos">
+    <p>Summary
+      <br>
+      <br>
+    </p>
+    <p> {{todo.summary}}</p>
+  </section>
+
+  <section ng-repeat="todo in todos">
+    <p>Experience </p>
+    <div>
+      <ul>
+        <li>
+          <img src={{todo.Exp1_img}}>
+          <h3>{{todo.Exp1_tit}}</h3>
+          <p>{{todo.Exp1_con}}</p>
+        </li>
+
+        <li>
+          <img src={{todo.Exp2_img}}>
+          <h3>{{todo.Exp2_tit}}</h3>
+          <p>{{todo.Exp2_con}}</p>
+        </li>
+
+        <li>
+          <img src={{todo.Exp3_img}}>
+          <h3>{{todo.Exp3_tit}}</h3>
+          <p>{{todo.Exp3_con}}</p>
+        </li>
+
+        <li>
+          <img src={{todo.Exp4_img}}>
+          <h3>{{todo.Exp4_tit}}</h3>
+          <p>{{todo.Exp4_con}}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section ng-repeat="todo in todos">
+    <p> Project</p>
+    <div class="list-type1">
+      <ol>
+        <li><a>{{todo.Pro1}}</a></li>
+        <li><a>{{todo.Pro2}}</a></li>
+        <li><a>{{todo.Pro3}}</a></li>
+        <li><a>{{todo.Pro4}}</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section ng-repeat="todo in todos">
+    <p>Skills</p>
+    <div class="demo">
+      <div class="tags">
+        <p>
+          <a title="" href="" class="color5">{{todo.Skill1}}</a>
+          <a title="" href="" class="color2">{{todo.Skill2}}</a>
+          <a title="" href="" class="color1">{{todo.Skill3}}</a>
+          <a title="" href="" class="color5">{{todo.Skill4}}</a>
+          <a title="" href="" class="color3">{{todo.Skill5}}</a>
+          <a title="" href="" class="color4">{{todo.Skill6}}</a>
+          <a title="" href="" class="color5">{{todo.Skill7}}</a>
+          <a title="" href="" class="color1">{{todo.Skill8}}</a>
+          <a title="" href="" class="color3">{{todo.Skill9}}</a>
+          <a title="" href="" class="color4">{{todo.Skill10}}</a>
+          <a title="" href="" class="color2">{{todo.Skill11}}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
