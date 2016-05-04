@@ -4,34 +4,53 @@
 <head>
   <meta charset="utf-8">
   <title>BTGK</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
   <script src="app.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
-<body ng-controller="TodoCtrl">
-  <section>
+<body ng-controller="TodoCtrl"  ng-app="App">
+  <section ng-repeat="todo in todos">
     <!-- Begin Image -->
 
     <img class="portrait" ng-repeat="todo in todos" src={{todo.image}} />
     <!-- End Image -->
     <!-- Begin Personal Information -->
     <div class="self">
-      <h1 ng-repeat="todo in todos"> {{todo.name}} </h1>
-      <p ng-repeat="todo in todos">{{todo.headline}}</p>
-      <table style="width:100%">
+      <h1> 
+      <div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.name}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.name" ng-blur="doneEditing(item)" autofocus />
+    </div>
+ </h1>
+      <p>
+        <div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.headline}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.headline" ng-blur="doneEditing(item)" autofocus />
+    </div>
+      </p>
+      <table>
         <tr ng-repeat="todo in todos">
           <td>Country</td>
-          <td>{{todo.country}}</td>
+          <td><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.country}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.country" ng-blur="doneEditing(item)" autofocus />
+    </div>  </td>
         </tr>
         <tr ng-repeat="todo in todos">
           <td>Job</td>
-          <td>{{todo.job}}</td>
+          <td><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.job}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.job" ng-blur="doneEditing(item)" autofocus />
+    </div></td>
         </tr>
         <tr ng-repeat="todo in todos">
           <td>Email</td>
-          <td>{{todo.information}}</td>
+          <td><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.information}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.information" ng-blur="doneEditing(item)" autofocus />
+    </div></td>
         </tr>
       </table>
     </div>
@@ -40,9 +59,12 @@
   <section ng-repeat="todo in todos">
     <p>Summary
       <br>
-      <br>
     </p>
-    <p> {{todo.summary}}</p>
+     <div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.summary}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.summary" ng-blur="doneEditing(item)" autofocus />
+    </div>
+
   </section>
 
   <section ng-repeat="todo in todos">
@@ -51,26 +73,50 @@
       <ul>
         <li>
           <img src={{todo.Exp1_img}}>
-          <h3>{{todo.Exp1_tit}}</h3>
-          <p>{{todo.Exp1_con}}</p>
+          <h3><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp1_tit}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp1_tit" ng-blur="doneEditing(item)" autofocus />
+    </div> </h3>
+          <p><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp1_con}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp1_con" ng-blur="doneEditing(item)" autofocus />
+    </div> </p>
         </li>
 
         <li>
           <img src={{todo.Exp2_img}}>
-          <h3>{{todo.Exp2_tit}}</h3>
-          <p>{{todo.Exp2_con}}</p>
+          <h3><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp2_tit}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp2_tit" ng-blur="doneEditing(item)" autofocus />
+    </div> </h3>
+          <p><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp2_con}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp2_con" ng-blur="doneEditing(item)" autofocus />
+    </div></p>
         </li>
 
         <li>
           <img src={{todo.Exp3_img}}>
-          <h3>{{todo.Exp3_tit}}</h3>
-          <p>{{todo.Exp3_con}}</p>
+          <h3><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp3_tit}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp3_tit" ng-blur="doneEditing(item)" autofocus />
+    </div> </h3>
+          <p><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp3_con}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp3_con" ng-blur="doneEditing(item)" autofocus />
+    </div></p>
         </li>
 
         <li>
           <img src={{todo.Exp4_img}}>
-          <h3>{{todo.Exp4_tit}}</h3>
-          <p>{{todo.Exp4_con}}</p>
+          <h3><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp4_tit}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp4_tit" ng-blur="doneEditing(item)" autofocus />
+    </div></h3>
+          <p><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Exp4_con}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Exp4_con" ng-blur="doneEditing(item)" autofocus />
+    </div></p>
         </li>
       </ul>
     </div>
@@ -80,30 +126,82 @@
     <p> Project</p>
     <div class="list-type1">
       <ol>
-        <li><a>{{todo.Pro1}}</a></li>
-        <li><a>{{todo.Pro2}}</a></li>
-        <li><a>{{todo.Pro3}}</a></li>
-        <li><a>{{todo.Pro4}}</a></li>
+        <li><a><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Pro1}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Pro1" ng-blur="doneEditing(item)" autofocus />
+    </div></a></li>
+        <li><a><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Pro2}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Pro2" ng-blur="doneEditing(item)" autofocus />
+    </div></a></li>
+        <li><a><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Pro3}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Pro3" ng-blur="doneEditing(item)" autofocus />
+    </div></a></li>
+        <li><a><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Pro4}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Pro4" ng-blur="doneEditing(item)" autofocus />
+    </div></a></li>
       </ol>
     </div>
+  </section>
+  <section ng-repeat="todo in todos">
+  <p> Education </p>
+<div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.edu}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.edu" ng-blur="doneEditing(item)" autofocus />
+    </div>
+
   </section>
 
   <section ng-repeat="todo in todos">
     <p>Skills</p>
     <div class="demo">
       <div class="tags">
-        <p>
-          <a title="" href="" class="color5">{{todo.Skill1}}</a>
-          <a title="" href="" class="color2">{{todo.Skill2}}</a>
-          <a title="" href="" class="color1">{{todo.Skill3}}</a>
-          <a title="" href="" class="color5">{{todo.Skill4}}</a>
-          <a title="" href="" class="color3">{{todo.Skill5}}</a>
-          <a title="" href="" class="color4">{{todo.Skill6}}</a>
-          <a title="" href="" class="color5">{{todo.Skill7}}</a>
-          <a title="" href="" class="color1">{{todo.Skill8}}</a>
-          <a title="" href="" class="color3">{{todo.Skill9}}</a>
-          <a title="" href="" class="color4">{{todo.Skill10}}</a>
-          <a title="" href="" class="color2">{{todo.Skill11}}</a>
+          <a title="" href="" class="color2"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill1}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill1" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color2"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill2}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill2" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color1"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill3}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill3" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color5"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill4}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill4" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color3"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill5}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill5" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color4"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill6}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill6" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color5"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill7}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill7" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color1"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill8}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill8" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color3"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill9}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill9" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color4"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill10}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill10" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
+          <a title="" href="" class="color2"><div ng-app ng-controller="myCtrl">
+      <p ng-repeat="item in items"> <span ng-hide="item.editing" ng-dblclick="editItem(item)">{{todo.Skill11}}</span> </p>
+      <input ng-repeat="item in items" ng-show="item.editing" ng-model="todo.Skill11" ng-blur="doneEditing(item)" autofocus />
+    </div></a>
         </p>
       </div>
     </div>

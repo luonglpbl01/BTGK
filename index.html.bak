@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <title>BTGK</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body ng-controller="TodoCtrl">
+  <section>
+    <!-- Begin Image -->
+
+    <img class="portrait" ng-repeat="todo in todos" src={{todo.image}} />
+    <!-- End Image -->
+    <!-- Begin Personal Information -->
+    <div class="self">
+      <h1 ng-repeat="todo in todos"> {{todo.name}} </h1>
+      <p ng-repeat="todo in todos">{{todo.headline}}</p>
+      <table style="width:100%">
+        <tr ng-repeat="todo in todos">
+          <td>Country</td>
+          <td>{{todo.country}}</td>
+        </tr>
+        <tr ng-repeat="todo in todos">
+          <td>Job</td>
+          <td>{{todo.job}}</td>
+        </tr>
+        <tr ng-repeat="todo in todos">
+          <td>Email</td>
+          <td>{{todo.information}}</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+</body>
+
+</html>
