@@ -92,6 +92,12 @@ li img {
   float: left;
   margin: 0 15px 0 0;
 }
+img.exp {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0 15px 0 0;
+}
 
 li p {
   font: 200 12px/1.5 Georgia, Times New Roman, serif;
